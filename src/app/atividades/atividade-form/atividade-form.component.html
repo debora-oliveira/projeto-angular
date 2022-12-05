@@ -1,0 +1,39 @@
+<mat-card>
+  <mat-toolbar color="primary">Novo Teste</mat-toolbar>
+  <mat-card-content>
+
+    <form [formGroup]="form" class="full-width min-width">
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Tipo</mat-label>
+        <mat-select formControlName="tipo">
+          <mat-option value="Bug">Bug</mat-option>
+          <mat-option value="Teste Escrita">Teste Escrita</mat-option>
+          <mat-option value="Teste Execução">Teste Execução</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Resumo</mat-label>
+        <textarea matInput formControlName="resumo"></textarea>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Sprint</mat-label>
+        <input matInput formControlName="sprint" placeholder="sprint">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Status</mat-label>
+        <input matInput formControlName="status" placeholder="status">
+      </mat-form-field>
+
+
+    </form>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button (click)="onSubmit()">Salvar</button>
+    <button mat-raised-button (click)="onCancel()">Cancelar</button>
+  </mat-card-actions>
+</mat-card>

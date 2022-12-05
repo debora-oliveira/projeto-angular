@@ -1,0 +1,22 @@
+<mat-card>
+
+  <mat-toolbar color="primary"> Atividades </mat-toolbar>
+  <div class="column-flex" >
+
+    <app-atividades-list *ngIf="tarefas$ | async as tarefas; else loading" [tarefas]="tarefas"
+    (add)="onAdd()"
+    (edit)="onEdit($event)"
+    (remove)="onRemove($event)"
+    >
+
+    </app-atividades-list>
+
+
+
+    <ng-template #loading>
+      <div class="loadind-spinner">
+        <mat-spinner></mat-spinner>
+      </div>
+    </ng-template>
+  </div>
+</mat-card>

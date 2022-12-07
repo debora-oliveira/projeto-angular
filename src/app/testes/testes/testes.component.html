@@ -1,1 +1,22 @@
-<p>Teste me</p>
+<mat-card>
+
+  <mat-toolbar color="primary"> Testes </mat-toolbar>
+  <div class="column-flex" >
+
+    <app-testes-list *ngIf="testes$ | async as testes; else loading" [testes]="testes"
+    (add)="onAdd()"
+    (edit)="onEdit($event)"
+    (remove)="onRemove($event)"
+    >
+
+    </app-testes-list>
+
+
+
+    <ng-template #loading>
+      <div class="loadind-spinner">
+        <mat-spinner></mat-spinner>
+      </div>
+    </ng-template>
+  </div>
+</mat-card>

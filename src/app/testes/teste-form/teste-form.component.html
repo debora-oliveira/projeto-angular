@@ -1,1 +1,44 @@
-<p>teste-form works!</p>
+<mat-card>
+  <mat-toolbar color="primary">Novo Teste</mat-toolbar>
+  <mat-card-content>
+
+    <form [formGroup]="form" class="full-width min-width">
+
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Título</mat-label>
+        <input matInput formControlName="titulo" placeholder="titulo">
+      </mat-form-field>
+
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Sprint</mat-label>
+        <input matInput formControlName="sprint" placeholder="sprint">
+      </mat-form-field>
+
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="status">
+          <mat-option value="Aberto">Aberto</mat-option>
+          <mat-option value="Em progresso">Em progresso</mat-option>
+          <mat-option value="Bloqueado">Bloqueado</mat-option>
+          <mat-option value="Depreciado">Depreciado</mat-option>
+          <mat-option value="Concluído">concluído</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Pré-condições</mat-label>
+        <textarea matInput formControlName="preCondicoes"></textarea>
+      </mat-form-field>
+
+
+    </form>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button (click)="onSubmit()">Salvar</button>
+    <button mat-raised-button (click)="onCancel()">Cancelar</button>
+  </mat-card-actions>
+</mat-card>

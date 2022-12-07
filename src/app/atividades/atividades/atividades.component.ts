@@ -58,7 +58,7 @@ export class AtividadesComponent implements OnInit {
 
   onRemove(tarefa: Tarefa) {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
-      data: 'Tem certeza que deseja remover esse curso?',
+      data: 'Tem certeza que deseja remover?',
     });
 
     dialogRef.afterClosed().subscribe((result: boolean) => {

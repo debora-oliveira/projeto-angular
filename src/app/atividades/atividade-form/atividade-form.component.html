@@ -25,7 +25,13 @@
 
       <mat-form-field appearance="fill" class="full-width">
         <mat-label>Status</mat-label>
-        <input matInput formControlName="status" placeholder="status">
+        <mat-select formControlName="status">
+          <mat-option value="Aberto">Aberto</mat-option>
+          <mat-option value="Em progresso">Em progresso</mat-option>
+          <mat-option value="Bloqueado">Bloqueado</mat-option>
+          <mat-option value="Depreciado">Depreciado</mat-option>
+          <mat-option value="Concluído">concluído</mat-option>
+        </mat-select>
       </mat-form-field>
 
 

@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
+import { Teste } from '../model/teste';
+
+
 
 @Component({
   selector: 'app-testes-list',
@@ -7,15 +11,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestesListComponent implements OnInit {
 
+  @Input() testes: Teste[] = [];
+  @Output() add = new EventEmitter(false);
+  @Output() edit = new EventEmitter(false);
+  @Output() remove = new EventEmitter(false);
 
-
-  displayedColumns = ['atividade',  'descricao', 'preCondicoes','sprint', 'status', 'actions'];
+  displayedColumns = ['titulo', 'sprint', 'status', 'actions'];
 
 
   constructor() { }
 
   ngOnInit(): void {
   }
+  onAdd() {
+    this.add.emit(true);
+  }
 
+  onEdit(teste: Teste) {
+    this.edit.emit(teste);
+  }
 
+  onDelete(teste: Teste) {
+    this.remove.emit(teste);
+  }
 }
